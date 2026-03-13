@@ -106,7 +106,7 @@ header {
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 4rem;
-    align-items: center;
+    align-items: start; /* Changed from center to allow sticky to work */
 }
 
 .hero-text-content {
@@ -142,8 +142,8 @@ header {
 
 .hero-image-container {
     position: sticky;
-    top: 150px; /* Offset for sticky nav + notice */
-    align-self: start;
+    top: 155px; /* Adjust based on sticky nav + notice height */
+    margin-top: 1rem;
     border-radius: 24px;
     overflow: hidden;
     box-shadow: 20px 20px 60px rgba(0,0,0,0.1);
