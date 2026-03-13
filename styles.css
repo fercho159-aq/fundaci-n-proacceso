@@ -16,12 +16,17 @@
     box-sizing: border-box;
 }
 
+html {
+    scroll-behavior: smooth;
+}
+
 body {
     font-family: 'Roboto', sans-serif;
     background-color: var(--background-gray);
     color: var(--text-main);
     line-height: 1.6;
     overflow-x: hidden;
+    padding-top: 130px; /* Offset for sticky nav + notice */
 }
 
 h1, h2, h3, h4, .brand {
@@ -51,8 +56,11 @@ h1, h2, h3, h4, .brand {
 /* Header */
 header {
     background: var(--white);
-    padding: 1.5rem 0;
+    padding: 1rem 0;
     box-shadow: var(--shadow);
+    position: sticky;
+    top: 55px; /* Adjusting for top-notice height */
+    z-index: 999;
 }
 
 .header-content {
@@ -62,17 +70,47 @@ header {
 }
 
 .brand {
-    font-size: 1.5rem;
+    font-size: 1.3rem;
     font-weight: 700;
     text-transform: uppercase;
     letter-spacing: 1px;
 }
 
-/* Hero / Agradecimientos */
+.nav-links {
+    display: flex;
+    gap: 1.5rem;
+    list-style: none;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: var(--primary-blue);
+    font-weight: 600;
+    font-size: 0.9rem;
+    transition: var(--transition);
+    font-family: 'Montserrat', sans-serif;
+}
+
+.nav-links a:hover {
+    color: var(--accent-blue);
+}
+
+/* Hero / Agradecimientos Modern Redesign */
 .hero {
-    padding: 6rem 0;
+    padding: 2rem 0 6rem;
     background: var(--white);
-    text-align: center;
+    overflow: hidden;
+}
+
+.hero-layout {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4rem;
+    align-items: center;
+}
+
+.hero-text-content {
+    text-align: left;
 }
 
 .hero h1 {
@@ -80,38 +118,69 @@ header {
     margin-bottom: 2rem;
     color: var(--primary-blue);
     font-weight: 700;
+    line-height: 1.1;
 }
 
 .gratitude-text {
-    max-width: 900px;
-    margin: 0 auto;
-    text-align: left;
-    columns: 1;
-    font-size: 1.15rem;
-    line-height: 1.8;
+    font-size: 1.1rem;
+    line-height: 1.7;
     color: var(--text-main);
 }
 
 .gratitude-text p {
-    margin-bottom: 1.5rem;
+    margin-bottom: 1.2rem;
 }
 
 .gratitude-title {
-    font-size: 2rem;
+    font-size: 1.2rem;
     color: var(--accent-blue);
     font-weight: 700;
-    margin-bottom: 2rem;
-    text-align: center;
+    margin-bottom: 1rem;
+    text-align: left;
     letter-spacing: 2px;
 }
 
+.hero-image-container {
+    position: relative;
+    border-radius: 24px;
+    overflow: hidden;
+    box-shadow: 20px 20px 60px rgba(0,0,0,0.1);
+}
+
+.hero-image-container img {
+    width: 100%;
+    height: auto;
+    display: block;
+    transition: transform 0.5s ease;
+}
+
+.hero-image-container:hover img {
+    transform: scale(1.05);
+}
+
 .thanks-callout {
-    font-size: 3rem;
+    font-size: 2.5rem;
     font-weight: 700;
     color: var(--primary-blue);
-    margin-top: 3rem;
-    text-align: center;
+    margin-top: 2rem;
+    text-align: left;
     font-family: 'Montserrat', sans-serif;
+}
+
+@media (max-width: 992px) {
+    .hero-layout {
+        grid-template-columns: 1fr;
+        gap: 3rem;
+    }
+    
+    .hero h1 {
+        font-size: 2.8rem;
+    }
+    
+    .hero-image-container {
+        max-width: 600px;
+        margin: 0 auto;
+    }
 }
 
 /* Timeline */
