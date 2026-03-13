@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Transparencia | Fundación Proacceso</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&family=Roboto:wght@300;400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-datalabels@2.0.0"></script>
+    <script src="https://unpkg.com/lucide@latest"></script>
+</head>
+<body>
+
+    <div class="top-notice">
+        Cierre de operaciones al 30 de noviembre de 2019
+    </div>
+
+    <header>
+        <div class="container header-content">
+            <div class="brand">Fundación Proacceso</div>
+            <nav>
+                <!-- Quick links if needed -->
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <!-- Agradecimientos -->
+        <section class="hero">
+            <div class="container">
+                <h2 class="gratitude-title">AGRADECEMOS</h2>
+                <h1>Misión Cumplida</h1>
+                <div class="gratitude-text">
+                    <p>En 2009, la <strong>FUNDACIÓN PROACCESO ECO A.C.</strong> nació con la clara misión de contribuir al desarrollo económico y social de las personas en comunidades vulnerables, impulsando habilidades y competencias a través del impacto positivo de la tecnología.</p>
+                    
+                    <p>Lo hicimos convencidos de que la educación es el pilar de una comunidad equitativa e igualitaria, y conscientes de las grandes carencias de millones de mexicanos sin acceso a la tecnología.</p>
+                    
+                    <p>En estos años de trabajo, y gracias a la confianza depositada en nosotros por miembros de la sociedad civil, instituciones públicas y organismos internacionales, alcanzamos muchos de nuestros objetivos por un esfuerzo conjunto y con el compromiso de todos por aportar al bien común.</p>
+                    
+                    <p>Los ciclos se cierran y la FUNDACIÓN PROACCESO ECO A.C. no es ajena a esta dinámica que la vida impone por circunstancias que, en muchas ocasiones, somos distantes a su origen.</p>
+                    
+                    <p>Agradecemos profundamente a nuestros colaboradores, usuarios y aliados quienes se sumaron con nosotros en nuestro proyecto de crear un mejor país con personas más preparadas y con seres humanos más felices con su realidad.</p>
+                    
+                    <p>Hoy, la FUNDACIÓN PROACCESO ECO A.C. concluye sus operaciones y lo hace con una enorme gratitud por todas y cada una de las personas e instituciones que creyeron en nosotros, en nuestro proyecto y en nuestra capacidad para cruzar las metas trazadas.</p>
+                    
+                    <p>Reiteramos nuestro compromiso por un México mejor y equitativo.</p>
+                </div>
+                <div class="thanks-callout">¡Gracias!</div>
+            </div>
+        </section>
+
+        <!-- Timeline -->
+        <section class="timeline-section">
+            <div class="container">
+                <h2 style="text-align: center;">Nuestra Trayectoria</h2>
+                <div class="timeline">
+                    <div class="timeline-item left">
+                        <div class="timeline-content">
+                            <h3>2008</h3>
+                            <p>Fundación de Proacceso y apertura de la primera Red de Innovación y Aprendizaje (RIA).</p>
+                        </div>
+                    </div>
+                    <div class="timeline-item right">
+                        <div class="timeline-content">
+                            <h3>2011</h3>
+                            <p>Alcanzamos los primeros 100,000 usuarios activos en nuestras plataformas.</p>
+                        </div>
+                    </div>
+                    <div class="timeline-item left">
+                        <div class="timeline-content">
+                            <h3>2013</h3>
+                            <p>Expansión del programa de Bibliotecas Digitales en colaboración con gobiernos locales.</p>
+                        </div>
+                    </div>
+                    <div class="timeline-item right">
+                        <div class="timeline-content">
+                            <h3>2018</h3>
+                            <p>Reconocimiento internacional por el impacto social y eficiencia operativa.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Impact -->
+        <section class="impact-section">
+            <div class="container">
+                <h2 style="color: white; text-align: center;">Impacto en Cifras</h2>
+                <div class="impact-grid">
+                    <div class="impact-card">
+                        <i data-lucide="users" style="width: 48px; height: 48px; color: var(--accent-blue);"></i>
+                        <h3>1.4M</h3>
+                        <p>Beneficiados Directos</p>
+                    </div>
+                    <div class="impact-card">
+                        <i data-lucide="graduation-cap" style="width: 48px; height: 48px; color: var(--accent-blue);"></i>
+                        <h3>750k</h3>
+                        <p>Graduados de Cursos</p>
+                    </div>
+                    <div class="impact-card">
+                        <i data-lucide="trending-up" style="width: 48px; height: 48px; color: var(--accent-blue);"></i>
+                        <h3>1.74</h3>
+                        <p>ROI Social Generado</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Transparency Charts -->
+        <section class="charts-section">
+            <div class="container">
+                <h2 style="text-align: center; margin-bottom: 2rem;">Transparencia Financiera</h2>
+                <div class="charts-grid">
+                    <div class="chart-container">
+                        <h3>Asignación RIA</h3>
+                        <canvas id="riaChart"></canvas>
+                    </div>
+                    <div class="chart-container">
+                        <h3>Asignación Bibliotecas Digitales</h3>
+                        <canvas id="bdChart"></canvas>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Reports Grid -->
+        <section class="reports-section">
+            <div class="container">
+                <h2 style="text-align: center;">Informes de Transparencia 2019</h2>
+                <div class="reports-grid">
+                    <a href="#" class="report-button">Enero 2019</a>
+                    <a href="#" class="report-button">Febrero 2019</a>
+                    <a href="#" class="report-button">Marzo 2019</a>
+                    <a href="#" class="report-button">Abril 2019</a>
+                    <a href="#" class="report-button">Mayo 2019</a>
+                    <a href="#" class="report-button">Junio 2019</a>
+                    <a href="#" class="report-button">Julio 2019</a>
+                    <a href="#" class="report-button">Agosto 2019</a>
+                    <a href="#" class="report-button">Septiembre 2019</a>
+                    <a href="#" class="report-button">Octubre 2019</a>
+                    <a href="#" class="report-button">Noviembre 2019</a>
+                    <a href="#" class="report-button">Informe Final</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- FAQ Accordion -->
+        <section class="faq-section">
+            <div class="container">
+                <h2 style="text-align: center;">Preguntas Frecuentes</h2>
+                <div class="accordion">
+                    <div class="accordion-item">
+                        <div class="accordion-header">
+                            ¿Por qué cierra Fundación Proacceso?
+                            <i data-lucide="chevron-down"></i>
+                        </div>
+                        <div class="accordion-content">
+                            <p>Terminamos operaciones por un cúmulo de circunstancias en las que, lamentablemente, no tenemos injerencia ni la facultad para transformarlas favorablemente. Sin embargo, lo hace orgullosos por los retos cumplidos y casos de éxito que nos han arropado a lo largo de la historia del organismo, aunque un tanto insatisfechos de no haber podido hacer más por nuestras comunidades.</p>
+                        </div>
+                    </div>
+                    <div class="accordion-item">
+                        <div class="accordion-header">
+                            ¿Qué sucederá con los proyectos que quedaron inconclusos?
+                            <i data-lucide="chevron-down"></i>
+                        </div>
+                        <div class="accordion-content">
+                            <p>Somos muy afortunados por haber logrado todos nuestros objetivos y haber rebasado la meta que nos trazamos desde que concretamos esta noble iniciativa.</p>
+                        </div>
+                    </div>
+                    <div class="accordion-item">
+                        <div class="accordion-header">
+                            ¿Quién dará seguimiento a todas las acciones que realizaba la fundación con sus beneficiarios?
+                            <i data-lucide="chevron-down"></i>
+                        </div>
+                        <div class="accordion-content">
+                            <p>Hemos habilitado una dirección de correo electrónico en la que nos mantendremos en comunicación para aclarar todas las dudas que surjan en este tránsito: <a href="mailto:contacto@proacceso.org.mx">contacto@proacceso.org.mx</a>.</p>
+                        </div>
+                    </div>
+                    <div class="accordion-item">
+                        <div class="accordion-header">
+                            ¿Emprenderán acciones de esta naturaleza en el futuro?
+                            <i data-lucide="chevron-down"></i>
+                        </div>
+                        <div class="accordion-content">
+                            <p>El espíritu de todos los que formamos parte de Proacceso es de una enorme inquietud por seguir innovando en favor de los grupos vulnerables y de personas que requieren distintos tipos de apoyo y de herramientas para su desarrollo y crecimiento.</p>
+                        </div>
+                    </div>
+                    <div class="accordion-item">
+                        <div class="accordion-header">
+                            ¿Tuvo que ver el actual gobierno con el cierre de la fundación?
+                            <i data-lucide="chevron-down"></i>
+                        </div>
+                        <div class="accordion-content">
+                            <p>La conclusión de operaciones de una instancia como Proacceso es multifactorial y no podríamos responsabilizar a persona o institución de su cierre.</p>
+                        </div>
+                    </div>
+                    <div class="accordion-item">
+                        <div class="accordion-header">
+                            ¿Qué pasará con sus acreedores?
+                            <i data-lucide="chevron-down"></i>
+                        </div>
+                        <div class="accordion-content">
+                            <p>Todos los acreedores serán liquidados en su totalidad, de tal forma que Proacceso quedará sin deuda alguna.</p>
+                        </div>
+                    </div>
+                    <div class="accordion-item">
+                        <div class="accordion-header">
+                            ¿Qué hago si todavía tienen una deuda conmigo o con mi empresa?
+                            <i data-lucide="chevron-down"></i>
+                        </div>
+                        <div class="accordion-content">
+                            <p>Todos los asuntos pendientes serán debida y oportunamente atendidos, y para tal efecto ponemos a disposición del público la siguiente dirección de correo electrónico: <a href="mailto:contacto@proacceso.org.mx">contacto@proacceso.org.mx</a>.</p>
+                        </div>
+                    </div>
+                    <div class="accordion-item">
+                        <div class="accordion-header">
+                            ¿Qué pasará con sus empleados?
+                            <i data-lucide="chevron-down"></i>
+                        </div>
+                        <div class="accordion-content">
+                            <p>Todos los empleados serán liquidados con estricto apego a la ley.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-status">
+                    <h4>Fundación Proacceso ECO A.C.</h4>
+                    <p>Estado de Liquidación: 90% de pasivos cubiertos.</p>
+                    <p>Archivo de Transparencia Pública.</p>
+                </div>
+                <div class="footer-contact">
+                    <h4>Contacto</h4>
+                    <p>Para consultas legales o administrativas:</p>
+                    <a href="mailto:contacto@proacceso.org.mx">contacto@proacceso.org.mx</a>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                &copy; 2024 Fundación Proacceso. Todos los derechos reservados.
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+    <script>
+        lucide.createIcons();
+    </script>
+</body>
+</html>
