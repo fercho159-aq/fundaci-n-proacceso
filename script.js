@@ -16,6 +16,33 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 
+    // Hero Image Parallax Scroll
+    // The image slowly follows the scroll inside the hero section
+    const heroSection = document.querySelector('.hero');
+    const heroImg = document.querySelector('.hero-image-container');
+
+    if (heroSection && heroImg) {
+        window.addEventListener('scroll', () => {
+            const heroRect = heroSection.getBoundingClientRect();
+            const heroHeight = heroSection.offsetHeight;
+            const imgHeight = heroImg.offsetHeight;
+
+            // Only animate when hero is visible
+            if (heroRect.bottom > 0 && heroRect.top < window.innerHeight) {
+                // How far through the hero has the user scrolled (0 = top, 1 = bottom)
+                const scrollProgress = Math.max(0, Math.min(1,
+                    -heroRect.top / (heroHeight - window.innerHeight)
+                ));
+
+                // The max shift is the difference between the section height and image height
+                const maxShift = Math.max(0, heroHeight - imgHeight - 60); // 60px buffer
+                const shift = scrollProgress * maxShift;
+
+                heroImg.style.transform = `translateY(${shift}px)`;
+            }
+        }, { passive: true });
+    }
+
     // Register Datalabels Plugin
     Chart.register(ChartDataLabels);
 
